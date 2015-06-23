@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 //Dirty class for testing
-public class DummyClass : MonoBehaviour
+public class RunnerDummy : MonoBehaviour
 {
 
 	public GameObject audioInputObject;

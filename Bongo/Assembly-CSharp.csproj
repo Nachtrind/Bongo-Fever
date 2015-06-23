@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Input\DummyClass.cs" />
      <Compile Include="Assets\Scripts\Input\MicHandler.cs" />
+     <Compile Include="Assets\Scripts\Input\PlanetDummy.cs" />
+     <Compile Include="Assets\Scripts\Input\Pulse.cs" />
+     <Compile Include="Assets\Scripts\Input\RunnerDummy.cs" />
      <None Include="Assets\Materials\Electricity.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
