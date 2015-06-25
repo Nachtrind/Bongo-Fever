@@ -66,7 +66,6 @@ public class InputHandler : MonoBehaviour
 				runner.Jump ();
 			}
 		} else if (l > minVolume && acceptInput) {
-			Debug.Log ("Bang!");
 			acceptInput = false;
 			timer = 0.0f;
 			timeSinceLastBang = 0.0f;
