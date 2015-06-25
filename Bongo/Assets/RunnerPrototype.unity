@@ -569,16 +569,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioInputObject: {fileID: 844686221}
-  speed: 6
-  minVolume: 1
-  maxVolume: 25
+  speed: 5
+  minVolume: 2
+  maxVolume: 10
   inputPauseTime: .100000001
   left: {fileID: 1202026698}
   right: {fileID: 582648165}
   top: {fileID: 1388189903}
   bottom: {fileID: 125232309}
-  maxBPM: 250
-  minBPM: 40
+  maxBPM: 400
+  minBPM: 20
 --- !u!23 &2096221919
 MeshRenderer:
   m_ObjectHideFlags: 0

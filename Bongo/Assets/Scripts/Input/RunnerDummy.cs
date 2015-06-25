@@ -39,7 +39,7 @@ public class RunnerDummy : MonoBehaviour
 	void Update ()
 	{
 		float l = micIn.loudness;
-		if (l > minVolume && acceptInput) {
+		if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput) {
 			Debug.Log ("Loudness: " + l);
 			acceptInput = false;
 
