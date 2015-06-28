@@ -49,11 +49,11 @@
      <Compile Include="Assets\Scripts\DoubleRunner\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\InputHandler.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\Runner.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Input\MicHandler.cs" />
      <Compile Include="Assets\Scripts\Input\PlanetDummy.cs" />
      <Compile Include="Assets\Scripts\Input\Pulse.cs" />
      <Compile Include="Assets\Scripts\Input\RunnerDummy.cs" />
-     <Compile Include="Assets\Scripts\Menu\GameManager.cs" />
      <Compile Include="Assets\Scripts\Menu\LevelLoader.cs" />
      <None Include="Assets\Materials\Electricity.shader" />
  <Reference Include="UnityEngine.UI">

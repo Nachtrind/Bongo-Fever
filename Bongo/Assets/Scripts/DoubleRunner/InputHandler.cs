@@ -26,8 +26,9 @@ public class InputHandler : MonoBehaviour
 	//Groups that run on the left & right
 	public List<Runner> lefties;
 	public List<Runner> righties;
+	public GameObject camDummy;
 
-	//TImer
+	//Timer
 	float timer;
 	float inputTime = 0.08f;
 	bool acceptInput;
@@ -55,6 +56,14 @@ public class InputHandler : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		//forward movement
+		foreach (Runner runner in lefties) {
+			runner.DummyZ = camDummy.transform.position.z;
+		}
+		foreach (Runner runner in righties) {
+			runner.DummyZ = camDummy.transform.position.z;
+		}
+
 
 		float l = micIn.loudness;
 		if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
@@ -65,7 +74,7 @@ public class InputHandler : MonoBehaviour
 			foreach (Runner runner in righties) {
 				runner.Jump ();
 			}
-		} else if (l > minVolume && acceptInput) {
+		} else if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput) {
 			acceptInput = false;
 			timer = 0.0f;
 			timeSinceLastBang = 0.0f;
@@ -81,13 +90,7 @@ public class InputHandler : MonoBehaviour
 				}
 
 				int bpm = this.CalcAverageBeatsPerMinute ();
-
-				foreach (Runner runner in lefties) {
-					runner.CurrentX = leftMaxX + this.CalcDistanceToCenter (bpm);
-				}
-				foreach (Runner runner in righties) {
-					runner.CurrentX = rightMaxX - this.CalcDistanceToCenter (bpm);
-				}
+				this.SetXInRunners (this.CalcDistanceToCenter (bpm));
 			
 			} else {
 				lastBangs.Add (Time.time);
@@ -110,6 +113,17 @@ public class InputHandler : MonoBehaviour
 
 	}
 
+	private void SetXInRunners (float _distanceToCenter)
+	{
+		foreach (Runner runner in lefties) {
+			runner.CurrentX = leftMaxX + _distanceToCenter;
+		}
+		foreach (Runner runner in righties) {
+			runner.CurrentX = rightMaxX - _distanceToCenter;
+		}
+
+	}
+
 	private int CalcAverageBeatsPerMinute ()
 	{
 		float sum = 0;
@@ -125,7 +139,6 @@ public class InputHandler : MonoBehaviour
 
 	private float CalcDistanceToCenter (int currentBPM)
 	{
-		//Debug.Log ("BPM:" + currentBPM);
 		float percentage = Mathf.Clamp ((float)(currentBPM - minBPM), 0.1f, (float)(maxBPM - minBPM)) / (float)(maxBPM - minBPM);
 		//Debug.Log ("Percentage: " + percentage);
 		return percentage * laneExtends;
