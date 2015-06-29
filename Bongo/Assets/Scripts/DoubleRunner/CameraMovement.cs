@@ -8,6 +8,8 @@ public class CameraMovement : MonoBehaviour
 	public Vector3 laneCenter;
 	float speed;
 	float yPos;
+	bool reachedEnd;
+	public Transform finishLine;
 
 	// Use this for initialization
 	void Start ()
@@ -28,6 +30,15 @@ public class CameraMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		this.rigid.MovePosition (this.transform.position + new Vector3 (0, 0, 1) * speed * Time.deltaTime);
+		if (!reachedEnd) {
+			this.rigid.MovePosition (this.transform.position + new Vector3 (0, 0, 1) * speed * Time.deltaTime);
+		}
+
+		if (this.transform.position.z >= finishLine.position.z && !reachedEnd) {
+			reachedEnd = true;
+			InputManager.instance.ReachedEnd ();
+		}
 	}
+
+
 }

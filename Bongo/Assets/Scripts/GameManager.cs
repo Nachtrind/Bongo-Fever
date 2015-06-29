@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
 	//In Game Variables
 	public float speed;
+	public float stageSpeed;
 	public float xSpeed;
 
 	void Awake ()

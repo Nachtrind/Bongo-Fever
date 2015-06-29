@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public class InputHandler : MonoBehaviour
 {
 
+	/// Use InputManager instead
+	/// (rewrite because of 'pause handling', jump handling)
+
+
 	//Audio Input
 	public GameObject audioInputObject;
 	MicHandler micIn;
@@ -39,7 +43,24 @@ public class InputHandler : MonoBehaviour
 	List<float> lastBangs;
 	float timeSinceLastBang;
 	public float jumpForce;
-	
+
+	//Singleton Instance
+	public static InputHandler instance = null;
+
+	//Movement handling
+	private bool groupGrounded;
+
+	void Awake ()
+	{
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) { 
+			Destroy (gameObject);
+		}
+		
+		DontDestroyOnLoad (gameObject);
+	}
+
 
 	// Use this for initialization
 	void Start ()
@@ -74,12 +95,15 @@ public class InputHandler : MonoBehaviour
 			foreach (Runner runner in righties) {
 				runner.Jump ();
 			}
-		} else if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput) {
+		}
+
+		if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput) {
 			acceptInput = false;
 			timer = 0.0f;
 			timeSinceLastBang = 0.0f;
 
 			if (lastBangs.Count > 0) {
+
 
 				//only check the 5 last bangs
 				if (lastBangs.Count < 5) {
@@ -142,7 +166,11 @@ public class InputHandler : MonoBehaviour
 		float percentage = Mathf.Clamp ((float)(currentBPM - minBPM), 0.1f, (float)(maxBPM - minBPM)) / (float)(maxBPM - minBPM);
 		//Debug.Log ("Percentage: " + percentage);
 		return percentage * laneExtends;
+	}
 
+	public void SetInAir (bool _inAir)
+	{
+		this.groupGrounded = _inAir;
 	}
 
 }
