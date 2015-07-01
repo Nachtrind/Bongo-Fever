@@ -48,8 +48,8 @@ public class Runner : MonoBehaviour
 		speed = GameManager.instance.speed;
 		stageSpeed = GameManager.instance.stageSpeed;
 		xSpeed = GameManager.instance.xSpeed;
-		jumpForce = 5.0f;
-		offsetTime = Random.Range (5.0f, 10.0f);
+		jumpForce = InputManager.instance.jumpForce;
+		offsetTime = Random.Range (4.0f, 10.0f);
 		offsetTimer = offsetTime;
 	}
 	
@@ -81,7 +81,13 @@ public class Runner : MonoBehaviour
 		}
 
 		if (reachedEnd && moveToStage) {
-			if (this.transform.position.x != stagePos.x && this.transform.position.z != stagePos.z) {
+			//if (this.transform.position.x != stagePos.x && this.transform.position.z != stagePos.z) {
+
+			if (!(this.transform.position.x >= stagePos.x - 0.05f 
+				&& this.transform.position.x <= stagePos.x + 0.05f 
+				&& this.transform.position.z >= stagePos.z - 0.05f
+				&& this.transform.position.z <= stagePos.z + 0.05f)) {
+
 				Vector3 direction = stagePos - this.transform.position;
 				direction = new Vector3 (direction.x, 0.0f, direction.z);
 				direction = direction.normalized;
@@ -89,7 +95,6 @@ public class Runner : MonoBehaviour
 				this.transform.position = new Vector3 (this.transform.position.x + (direction.x * stageSpeed * Time.deltaTime), 
 				                                       this.transform.position.y, 
 				                                       this.transform.position.z + (direction.z * stageSpeed * Time.deltaTime));
-				Debug.Log ("Move");
 			} else {
 				moveToStage = false;
 			}
@@ -97,7 +102,6 @@ public class Runner : MonoBehaviour
 			Ray ray = new Ray (this.transform.position, stagePos);
 			if (Physics.Raycast (ray, 0.2f)) {
 				this.Jump ();
-				Debug.Log ("Jump");
 			}
 		}
 
@@ -154,7 +158,6 @@ public class Runner : MonoBehaviour
 		this.stagePos = _stagePos;
 		moveToStage = true;
 		reachedEnd = true;
-		Debug.Log (stagePos);
 	}
 
 	void OnCollisionEnter (Collision collision)

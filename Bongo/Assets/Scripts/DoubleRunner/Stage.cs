@@ -23,13 +23,13 @@ public class Stage : MonoBehaviour
 	public void SetStagePos (List<Runner> _lefties, List<Runner> _righties)
 	{
 		for (int i = 0; i < _lefties.Count; i++) {
-			float x = stageCenter.x - (xExtends / _lefties.Count * i) - Random.Range (-0.3f, 0.3f);
+			float x = stageCenter.x - (xExtends / _lefties.Count * i) - 0.5f - Random.Range (-0.3f, 0.3f);
 			float z = stageCenter.z + (Random.Range (-1.0f, 1.0f) * zExtends);
 			_lefties [i].SetStagePos (new Vector3 (x, 0.0f, z));
 		}
 
 		for (int i = 0; i < _righties.Count; i++) {
-			float x = stageCenter.x + (xExtends / _righties.Count * i) + Random.Range (-0.3f, 0.3f);
+			float x = stageCenter.x + (xExtends / _righties.Count * i) + 0.5f + Random.Range (-0.3f, 0.3f);
 			float z = stageCenter.z + (Random.Range (-1.0f, 1.0f) * zExtends);
 			_righties [i].SetStagePos (new Vector3 (x, 0.0f, z));
 		}

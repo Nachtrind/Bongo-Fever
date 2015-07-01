@@ -87,7 +87,7 @@ public class InputHandler : MonoBehaviour
 
 
 		float l = micIn.loudness;
-		if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
+		if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M) && acceptInput) {
 			//Jump Handling
 			foreach (Runner runner in lefties) {
 				runner.Jump ();
@@ -164,7 +164,6 @@ public class InputHandler : MonoBehaviour
 	private float CalcDistanceToCenter (int currentBPM)
 	{
 		float percentage = Mathf.Clamp ((float)(currentBPM - minBPM), 0.1f, (float)(maxBPM - minBPM)) / (float)(maxBPM - minBPM);
-		//Debug.Log ("Percentage: " + percentage);
 		return percentage * laneExtends;
 	}
 
