@@ -362,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &343018609
 Transform:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438263797}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: .408217967, y: -.234569743, z: .109381683, w: .875426114}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioInputObject: {fileID: 1988550941}
   minVolume: 2
-  jumpVolume: 20
+  jumpVolume: 18
   laneRenderer: {fileID: 326486764}
   subDistance: 2
   addDistance: .300000012
