@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		DontDestroyOnLoad (gameObject);
-		gameState = GameState.GamePaused;
+		gameState = GameState.GameRunning;
 		InitGame ();
 	}
 
