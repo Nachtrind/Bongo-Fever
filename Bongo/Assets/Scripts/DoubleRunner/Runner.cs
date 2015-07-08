@@ -135,6 +135,7 @@ public class Runner : MonoBehaviour
 			grounded = true;
 		}
 		anim.SetFloat ("DistanceToGround", 0.0f);
+		Debug.Log ("Input Manager: " + InputManager.instance);
 		InputManager.instance.SetGroupGrounded (grounded);
 
 		return grounded;

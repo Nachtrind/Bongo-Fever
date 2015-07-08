@@ -76,59 +76,73 @@ public class InputManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!reachedEnd) {
-			//forward movement
-			foreach (Runner runner in lefties) {
-				runner.DummyZ = camDummy.transform.position.z;
-			}
-			foreach (Runner runner in righties) {
-				runner.DummyZ = camDummy.transform.position.z;
-			}
+		float l = micIn.loudness;
 
-			float l = micIn.loudness;
-
-			//Jump
-			if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
-				//Jump Handling
+		if (GameManager.instance.gameState == GameState.GameRunning) {
+			if (!reachedEnd) {
+				//forward movement
 				foreach (Runner runner in lefties) {
-					runner.Jump ();
+					runner.DummyZ = camDummy.transform.position.z;
 				}
 				foreach (Runner runner in righties) {
-					runner.Jump ();
+					runner.DummyZ = camDummy.transform.position.z;
+				}
+
+				//Jump
+				if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
+					//Jump Handling
+					foreach (Runner runner in lefties) {
+						runner.Jump ();
+					}
+					foreach (Runner runner in righties) {
+						runner.Jump ();
+					}
+				}
+
+				//Left-Right
+				if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput && groupGrounded) {
+
+					acceptInput = false;
+					reverse = false;
+					timer = 0.0f;
+					distance += addDistance; 
+					distance = Mathf.Clamp (distance, 0.1f, laneExtends);
+					timeSinceLastBang = 0.0f;
+					SetXInRunners (distance);
+
+				} else if (timeSinceLastBang > nonBangTime) {
+					reverse = true;
+				} else {
+					timeSinceLastBang += Time.deltaTime;
+				}
+
+				//Movement toward edges if nothing happens
+				if (reverse && groupGrounded) {
+					distance -= subDistance * Time.deltaTime; 
+					distance = Mathf.Clamp (distance, 0.1f, laneExtends);
+					SetXInRunners (distance);
 				}
 			}
 
-			//Left-Right
-			if ((l > minVolume || Input.GetKeyDown (KeyCode.Space)) && acceptInput && groupGrounded) {
-
-				acceptInput = false;
-				reverse = false;
-				timer = 0.0f;
-				distance += addDistance; 
-				distance = Mathf.Clamp (distance, 0.1f, laneExtends);
-				timeSinceLastBang = 0.0f;
-				SetXInRunners (distance);
-
-			} else if (timeSinceLastBang > nonBangTime) {
-				reverse = true;
-			} else {
-				timeSinceLastBang += Time.deltaTime;
-			}
-
-			//Movement toward edges if nothing happens
-			if (reverse && groupGrounded) {
-				distance -= subDistance * Time.deltaTime; 
-				distance = Mathf.Clamp (distance, 0.1f, laneExtends);
-				SetXInRunners (distance);
-			}
-
-			//InputTimer
-			if (!acceptInput && timer > inputTime) {
-				acceptInput = true;
-			} else if (!acceptInput) {
-				timer += Time.deltaTime;
-			}
 		}
+
+		//Game Paused (start of a level)
+		if (GameManager.instance.gameState == GameState.GamePaused) {
+
+			//Bange the drum to start
+			if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
+				GameManager.instance.SetGameState (GameState.GameRunning);
+			}
+
+		}
+
+		//InputTimer
+		if (!acceptInput && timer > inputTime) {
+			acceptInput = true;
+		} else if (!acceptInput) {
+			timer += Time.deltaTime;
+		}
+
 	}
 	
 	private void SetXInRunners (float _distanceToCenter)

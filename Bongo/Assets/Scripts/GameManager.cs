@@ -1,10 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-	
+
+public enum GameState
+{
+	MainMenu,
+	GameRunning,
+	GamePaused
+}
+
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance = null;
+
+	public GameState gameState { get; private set; }
 
 	//In Game Variables
 	public float speed;
@@ -20,6 +29,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		DontDestroyOnLoad (gameObject);
+		gameState = GameState.GamePaused;
 		InitGame ();
 	}
 
@@ -34,5 +44,12 @@ public class GameManager : MonoBehaviour
 	{
 		Application.LoadLevel (levelName);
 	}
+
+	public void SetGameState (GameState gameState)
+	{
+		this.gameState = gameState;
+		//TODO: Handle Changes accordingly
+	}
+
 
 }
