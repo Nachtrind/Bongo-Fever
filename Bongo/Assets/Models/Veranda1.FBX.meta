@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 14c45a33a003cad4b8474f8d56f2f0c0
-timeCreated: 1436361799
+guid: 6f92164c4e5725f4daf133233ae7dab1
+timeCreated: 1436373400
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Veranda1
+    4300000: Veranda
     9500000: //RootNode
   materials:
     importMaterials: 1

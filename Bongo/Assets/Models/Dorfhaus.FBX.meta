@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 06dda6fa13b081f479fcb23ff26881ea
-timeCreated: 1436361798
+guid: 0843a112ea790864e966cf83f786df71
+timeCreated: 1436373400
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Box001
-    100002: Karre
-    100004: Kiste
-    100006: Stand
-    100008: //RootNode
-    400000: Box001
-    400002: Karre
-    400004: Kiste
-    400006: Stand
-    400008: //RootNode
-    2300000: Box001
-    2300002: Karre
-    2300004: Kiste
-    2300006: Stand
-    3300000: Box001
-    3300002: Karre
-    3300004: Kiste
-    3300006: Stand
-    4300000: Box001
-    4300002: Karre
-    4300004: Stand
-    4300006: Kiste
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Object002
     9500000: //RootNode
   materials:
     importMaterials: 1

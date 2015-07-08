@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: b8bc53db9884f2d4db034bacd9296756
-timeCreated: 1436361800
+guid: 71c2b40b41b26b8429081d1ecc1f2148
+timeCreated: 1436373665
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: Hausgross
     100002: HausKlein
-    100004: Treppe
-    100006: //RootNode
+    100004: //RootNode
+    100006: Treppe
     100008: Tuer
     400000: Hausgross
     400002: HausKlein
-    400004: Treppe
-    400006: //RootNode
+    400004: //RootNode
+    400006: Treppe
     400008: Tuer
     2300000: Hausgross
     2300002: HausKlein

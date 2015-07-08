@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: d57bc9357a113074aa9ee1cf6c06d046
-timeCreated: 1436361800
+guid: f23e18ff4bc14cc4eaebf5a53dc376b8
+timeCreated: 1436373069
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Bogenbalkon
-    100002: //RootNode
-    100004: Bogenhaus
-    100006: Front1
-    400000: Bogenbalkon
-    400002: //RootNode
-    400004: Bogenhaus
-    400006: Front1
-    2300000: Bogenbalkon
-    2300002: Bogenhaus
-    2300004: Front1
-    3300000: Bogenbalkon
-    3300002: Bogenhaus
-    3300004: Front1
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Front1
-    4300002: Bogenhaus
-    4300004: Bogenbalkon
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -1,15 +1,32 @@
 fileFormatVersion: 2
-guid: 5705f6ee699ece9418ec87e107da23c1
-timeCreated: 1436362398
+guid: b714229f0f77cd641998ed781c548a16
+timeCreated: 1436373665
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Veranda1
+    100000: Hausgross
+    100002: HausKlein
+    100004: //RootNode
+    100006: Treppe
+    100008: Tuer
+    400000: Hausgross
+    400002: HausKlein
+    400004: //RootNode
+    400006: Treppe
+    400008: Tuer
+    2300000: Hausgross
+    2300002: HausKlein
+    2300004: Treppe
+    2300006: Tuer
+    3300000: Hausgross
+    3300002: HausKlein
+    3300004: Treppe
+    3300006: Tuer
+    4300000: Treppe
+    4300002: HausKlein
+    4300004: Hausgross
+    4300006: Tuer
     9500000: //RootNode
   materials:
     importMaterials: 1

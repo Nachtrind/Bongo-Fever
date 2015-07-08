@@ -1,15 +1,27 @@
 fileFormatVersion: 2
-guid: 4f5dca511a9cbaa499f1ed35d6e465fa
-timeCreated: 1436361799
+guid: cc45f85705ee86346a35ba3b0404382f
+timeCreated: 1436373400
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Object001
+    100002: Object002
+    100004: Veranda
+    100006: //RootNode
+    400000: Object001
+    400002: Object002
+    400004: Veranda
+    400006: //RootNode
+    2300000: Object001
+    2300002: Object002
+    2300004: Veranda
+    3300000: Object001
+    3300002: Object002
+    3300004: Veranda
     4300000: Veranda
+    4300002: Object001
+    4300004: Object002
     9500000: //RootNode
   materials:
     importMaterials: 1
