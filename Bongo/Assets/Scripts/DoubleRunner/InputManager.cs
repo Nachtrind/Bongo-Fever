@@ -56,14 +56,16 @@ public class InputManager : MonoBehaviour
 		} else if (instance != this) { 
 			Destroy (gameObject);
 		}
-		DontDestroyOnLoad (gameObject);
+		//DontDestroyOnLoad (gameObject);
 	}
 	
 	
 	// Use this for initialization
 	void Start ()
 	{
+		audioInputObject = GameObject.Find ("MicInput");
 		micIn = (MicHandler)audioInputObject.GetComponent ("MicHandler");
+		laneRenderer = GameObject.Find ("Lane").GetComponent<Renderer> ();
 		this.laneCenter = laneRenderer.bounds.center;
 		laneExtends = laneRenderer.bounds.extents.x * 0.9f;
 		leftMaxX = laneCenter.x - laneExtends;
@@ -71,6 +73,9 @@ public class InputManager : MonoBehaviour
 		acceptInput = true;
 		reverse = false;
 		distance = laneExtends * 0.5f;
+
+
+
 	}
 	
 	// Update is called once per frame
@@ -136,6 +141,16 @@ public class InputManager : MonoBehaviour
 
 		}
 
+		//Game Over
+		if (GameManager.instance.gameState == GameState.GameOver) {
+			
+			//Bange the drum to reload
+			if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
+				Application.LoadLevel ("DoubleRunner");
+			}
+			
+		}
+
 		//InputTimer
 		if (!acceptInput && timer > inputTime) {
 			acceptInput = true;
@@ -170,7 +185,7 @@ public class InputManager : MonoBehaviour
 		}
 
 		if (lefties.Count <= 0 && righties.Count <= 0) {
-			Debug.Log ("GAME OVER");
+			GameManager.instance.SetGameState (GameState.GameOver);
 		}
 	}
 

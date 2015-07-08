@@ -30,13 +30,16 @@ public class CameraMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if (!reachedEnd) {
-			this.rigid.MovePosition (this.transform.position + new Vector3 (0, 0, 1) * speed * Time.deltaTime);
-		}
+		if (GameManager.instance.gameState == GameState.GameRunning) {
+			if (!reachedEnd) {
+				this.rigid.MovePosition (this.transform.position + new Vector3 (0, 0, 1) * speed * Time.deltaTime);
+			}
 
-		if (this.transform.position.z >= finishLine.position.z && !reachedEnd) {
-			reachedEnd = true;
-			InputManager.instance.ReachedEnd ();
+			if (this.transform.position.z >= finishLine.position.z && !reachedEnd) {
+				reachedEnd = true;
+				InputManager.instance.ReachedEnd ();
+				GameManager.instance.SetGameState(GameState.GameWon);
+			}
 		}
 	}
 
