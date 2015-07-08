@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public enum GameState
 {
 	MainMenu,
 	GameRunning,
-	GamePaused
+	GamePaused,
+	GameOver,
+	GameWon
 }
 
 public class GameManager : MonoBehaviour
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
 	public float speed;
 	public float stageSpeed;
 	public float xSpeed;
+	AudioSource audioS;
 
 	void Awake ()
 	{
@@ -29,8 +33,9 @@ public class GameManager : MonoBehaviour
 		}
 
 		DontDestroyOnLoad (gameObject);
-		gameState = GameState.GameRunning;
+		gameState = GameState.GamePaused;
 		InitGame ();
+		audioS = this.GetComponent<AudioSource> (); 
 	}
 
 	void InitGame ()
@@ -49,6 +54,22 @@ public class GameManager : MonoBehaviour
 	{
 		this.gameState = gameState;
 		//TODO: Handle Changes accordingly
+
+		//Game Running
+		if (gameState == GameState.GameRunning) {
+			audioS.Play ();
+			GameObject text = GameObject.Find ("LevelStart");
+			text.SetActive (false);
+		}
+
+		//Game Over
+		if (gameState == GameState.GameOver) {
+			GameObject gameOver = GameObject.Find ("GameOver");
+			Debug.Log (gameOver);
+			gameOver.GetComponent<Text> ().enabled = true;
+		}
+
+
 	}
 
 

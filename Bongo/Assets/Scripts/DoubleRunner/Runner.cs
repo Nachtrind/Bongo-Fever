@@ -41,7 +41,7 @@ public class Runner : MonoBehaviour
 	void Start ()
 	{
 		rigid = this.GetComponent<Rigidbody> ();
-		anim = this.GetComponent<Animator> ();
+		anim = this.GetComponentInChildren<Animator> ();
 		if (anim == null) {
 			Debug.Log ("Anim is null!!!");
 		}
@@ -99,7 +99,7 @@ public class Runner : MonoBehaviour
 				                                       this.transform.position.z + (direction.z * stageSpeed * Time.deltaTime));
 			} else {
 				moveToStage = false;
-				//anim.SetBool ("OnStage", true);
+				anim.SetBool ("OnStage", true);
 			}
 
 			Ray ray = new Ray (this.transform.position, stagePos);
@@ -118,11 +118,11 @@ public class Runner : MonoBehaviour
 				rigid.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 				inAir = true;
 				doubleAir = false;
-				//anim.SetBool ("Jump", true);
+				anim.SetBool ("Jump", true);
 			} else if (!doubleAir) {
 				rigid.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 				doubleAir = true;
-				//anim.SetBool ("Jump", true);
+				anim.SetBool ("Jump", true);
 			}
 		}
 	}
@@ -133,11 +133,11 @@ public class Runner : MonoBehaviour
 		Vector3 down = transform.TransformDirection (-Vector3.up);
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, down, out hit, 0.25f)) {
-			//anim.SetBool ("Jump", false);
-			//anim.SetFloat ("DistanceToGround", hit.distance);
+			anim.SetBool ("Jump", false);
+			anim.SetFloat ("DistanceToGround", hit.distance);
 			grounded = true;
 		}
-		//anim.SetFloat ("DistanceToGround", 0.0f);
+		anim.SetFloat ("DistanceToGround", 0.0f);
 		InputManager.instance.SetGroupGrounded (grounded);
 
 		return grounded;
@@ -172,8 +172,8 @@ public class Runner : MonoBehaviour
 	{
 		if (collision.collider.tag.Equals ("Obstacle")) {
 			dead = true;
+			anim.SetBool ("Dead", true);
 			InputManager.instance.RemoveRunner (this);
-			//anim.SetBool ("Dead", true);
 		}
 
 		if (collision.collider.tag.Equals ("InactiveBongo")) {
