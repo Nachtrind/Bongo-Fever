@@ -6,6 +6,7 @@ public class Runner : MonoBehaviour
 
 	//Components
 	private Rigidbody rigid;
+	private Animator anim;
 
 	//Movement Variables
 	public float speed;
@@ -27,11 +28,6 @@ public class Runner : MonoBehaviour
 	public bool active;
 	public bool lefty;
 
-	//Materials
-	public Material deadMat;
-	public Material inactiveMat;
-	public Material activeMat;
-	
 	//Group offset for a more natural movement
 	private float xOffset;
 	private float zOffset;
@@ -45,20 +41,23 @@ public class Runner : MonoBehaviour
 	void Start ()
 	{
 		rigid = this.GetComponent<Rigidbody> ();
+		anim = this.GetComponentInChildren<Animator> ();
 		speed = GameManager.instance.speed;
 		stageSpeed = GameManager.instance.stageSpeed;
 		xSpeed = GameManager.instance.xSpeed;
 		jumpForce = InputManager.instance.jumpForce;
 		offsetTime = Random.Range (4.0f, 10.0f);
 		offsetTimer = offsetTime;
+		if (active) {
+			anim.StopPlayback ();
+		}
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		this.IsGrounded ();
 		if (!dead && active && !reachedEnd) {
-			this.IsGrounded ();
-
 			if (offsetTimer > offsetTime) {
 				this.xOffset = Random.Range (-0.5f, 0.5f);
 				this.zOffset = Random.Range (-0.3f, 0.3f);
@@ -97,6 +96,7 @@ public class Runner : MonoBehaviour
 				                                       this.transform.position.z + (direction.z * stageSpeed * Time.deltaTime));
 			} else {
 				moveToStage = false;
+				anim.SetBool ("OnStage", true);
 			}
 
 			Ray ray = new Ray (this.transform.position, stagePos);
@@ -115,9 +115,11 @@ public class Runner : MonoBehaviour
 				rigid.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 				inAir = true;
 				doubleAir = false;
+				anim.SetBool ("Jump", true);
 			} else if (!doubleAir) {
 				rigid.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 				doubleAir = true;
+				anim.SetBool ("Jump", true);
 			}
 		}
 	}
@@ -126,10 +128,13 @@ public class Runner : MonoBehaviour
 	{
 		bool grounded = false;
 		Vector3 down = transform.TransformDirection (-Vector3.up);
-		if (Physics.Raycast (transform.position, down, 0.25f)) {
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, down, out hit, 0.25f)) {
+			anim.SetBool ("Jump", false);
+			anim.SetFloat ("DistanceToGround", hit.distance);
 			grounded = true;
 		}
-
+		anim.SetFloat ("DistanceToGround", 0.0f);
 		InputManager.instance.SetGroupGrounded (grounded);
 
 		return grounded;
@@ -164,14 +169,13 @@ public class Runner : MonoBehaviour
 	{
 		if (collision.collider.tag.Equals ("Obstacle")) {
 			dead = true;
-			this.GetComponent<Renderer> ().material = deadMat;
 			InputManager.instance.RemoveRunner (this);
+			anim.SetBool ("Dead", true);
 		}
 
 		if (collision.collider.tag.Equals ("InactiveBongo")) {
 			collision.collider.GetComponent<Runner> ().active = true;
 			collision.collider.GetComponent<Runner> ().jumpForce = this.jumpForce;
-			collision.collider.GetComponent<Renderer> ().material = activeMat;
 			collision.collider.gameObject.layer = 8;
 			collision.collider.gameObject.tag = "Bongo";
 			if (this.lefty) {
@@ -183,12 +187,4 @@ public class Runner : MonoBehaviour
 			}
 		}
 	}
-
-	void OnDrawGizmos ()
-	{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawSphere (stagePos, 0.5f);
-	}
-
-
 }
