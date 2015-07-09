@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Runner : MonoBehaviour
 {
-
 	//Components
 	private Rigidbody rigid;
 	private Animator anim;
@@ -13,6 +12,7 @@ public class Runner : MonoBehaviour
 	float xSpeed;
 	float stageSpeed;
 	float jumpForce;
+	float doubleJumpForce;
 	private bool inAir;
 	private bool doubleAir;
 	private float _currentX;
@@ -49,6 +49,7 @@ public class Runner : MonoBehaviour
 		stageSpeed = GameManager.instance.stageSpeed;
 		xSpeed = GameManager.instance.xSpeed;
 		jumpForce = InputManager.instance.jumpForce;
+		doubleJumpForce = InputManager.instance.doubleJumpForce;
 		offsetTime = Random.Range (4.0f, 10.0f);
 		offsetTimer = offsetTime;
 		/*if (active) {
@@ -120,7 +121,7 @@ public class Runner : MonoBehaviour
 				doubleAir = false;
 				//anim.SetBool ("Jump", true);
 			} else if (!doubleAir) {
-				rigid.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
+				rigid.AddForce (Vector3.up * doubleJumpForce * 0.75f, ForceMode.Impulse);
 				doubleAir = true;
 				//anim.SetBool ("Jump", true);
 			}
@@ -170,7 +171,7 @@ public class Runner : MonoBehaviour
 
 	void OnCollisionEnter (Collision collision)
 	{
-		if (collision.collider.tag.Equals ("Obstacle")) {
+		if (collision.collider.tag.Equals ("Obstacle") && !GameManager.instance.godmode) {
 			dead = true;
 			//anim.SetBool ("Dead", true);
 			InputManager.instance.RemoveRunner (this);
@@ -179,6 +180,7 @@ public class Runner : MonoBehaviour
 		if (collision.collider.tag.Equals ("InactiveBongo")) {
 			collision.collider.GetComponent<Runner> ().active = true;
 			collision.collider.GetComponent<Runner> ().jumpForce = this.jumpForce;
+			collision.collider.GetComponent<Runner> ().doubleJumpForce = this.doubleJumpForce;
 			collision.collider.gameObject.layer = 8;
 			collision.collider.gameObject.tag = "Bongo";
 			if (this.lefty) {

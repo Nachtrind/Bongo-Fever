@@ -11,15 +11,20 @@ public class WomanScript : MonoBehaviour
 	private int currentDance;
 	public Material[] dresses;
 	private float timer;
+	float hitDistance;
+	public bool women;
 
 	// Use this for initialization
 	void Start ()
 	{
+		hitDistance = 1.00f;
 		currentDance = 1;
 		anim = this.GetComponentInChildren<Animator> ();
 		anim.SetInteger ("State", currentDance);
 		if (this.GetComponentInChildren<Renderer> () != null) {
-			this.GetComponentInChildren<Renderer> ().material = dresses [Random.Range (0, dresses.Length - 1)];
+			if (women) {
+				this.GetComponentInChildren<Renderer> ().material = dresses [Random.Range (0, dresses.Length - 1)];
+			}
 		} else {
 			Debug.Log ("Oh no, no renderer!");
 		}
@@ -45,7 +50,11 @@ public class WomanScript : MonoBehaviour
 
 		if (timer >= 3.0f) {
 			timer = 0.0f;
-			this.currentDance = Random.Range (1, 2);
+			if (women) {
+				this.currentDance = Random.Range (1, 2);
+			} else {
+				this.currentDance = 1;
+			}
 			anim.SetInteger ("State", currentDance);
 		}
 
@@ -54,26 +63,36 @@ public class WomanScript : MonoBehaviour
 	void FixedUpdate ()
 	{
 		if (active && !reachedTarget) {
+			bool hitSomething = false;
+			Vector3 dir = targetPoint.position - this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f);
+			Ray ray = new Ray (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir.normalized);
+			RaycastHit[] hits = Physics.RaycastAll (ray, 2.0f);
+			Debug.DrawRay (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir.normalized * 2.0f, Color.blue, 4.0f);
 
-			Vector3 dir = targetPoint.position + new Vector3 (0.0f, 1.0f, 0.0f) - this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f);
-			Ray ray = new Ray (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir.normalized * speed);
-			RaycastHit hit;
-			Debug.DrawRay (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir, Color.blue, 5.0f);
-			if (Physics.Raycast (ray, out hit, 0.2f)) {
-				if (hit.distance < 0.2) {
-					Debug.Log ("Something is blocking my way, I stop and dance now");
-					this.currentDance = Random.Range (1, 2);
-					anim.SetInteger ("State", currentDance);
-					reachedTarget = true;
+			if (hits.Length > 0) {
+				foreach (RaycastHit hit in hits) {
+					if (hit.collider != this.GetComponent<Collider> () && hit.distance < hitDistance) {
+						Debug.Log ("Something is blocking my way, I stop and dance now");
+						Debug.Log ("I, " + this.name + ", hit: " + hit.collider.gameObject.name);
+						if (women) {
+							this.currentDance = Random.Range (1, 2);
+						} else {
+							this.currentDance = 1;
+						}
+						anim.SetInteger ("State", currentDance);
+						hitSomething = true;
+						reachedTarget = true;
+						break;
+					}
 				}
-			} else {
-				/*rigid.MovePosition (new Vector3 (this.transform.position.x + dir.normalized.x * speed * Time.deltaTime, 
-				                                this.transform.position.y,
-				                                this.transform.position.z + dir.normalized.z * speed * Time.deltaTime));*/
-				this.transform.position = new Vector3 (this.transform.position.x + dir.normalized.x * speed * Time.deltaTime, 
-			                                      this.transform.position.y,
-			                                      this.transform.position.z + dir.normalized.z * speed * Time.deltaTime);
 			}
+
+			if (!hitSomething) {
+				this.transform.position = new Vector3 (this.transform.position.x + dir.normalized.x * speed * Time.deltaTime, 
+				                                       this.transform.position.y,
+				                                       this.transform.position.z + dir.normalized.z * speed * Time.deltaTime);
+			}
+
 		}
 	}
 

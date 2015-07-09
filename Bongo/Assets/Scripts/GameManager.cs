@@ -14,6 +14,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+	public bool godmode;
 	public static GameManager instance = null;
 
 	public GameState gameState { get; private set; }

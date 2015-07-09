@@ -40,6 +40,7 @@ public class InputManager : MonoBehaviour
 	//Movement
 	float timeSinceLastBang;
 	public float jumpForce;
+	public float doubleJumpForce;
 	private bool reverse;
 	
 	//Singleton Instance
