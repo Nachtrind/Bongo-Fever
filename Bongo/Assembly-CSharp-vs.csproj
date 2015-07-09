@@ -49,8 +49,10 @@
      <Compile Include="Assets\Scripts\DoubleRunner\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\InputManager.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\Obstacle.cs" />
+     <Compile Include="Assets\Scripts\DoubleRunner\PeopleEvent.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\Runner.cs" />
      <Compile Include="Assets\Scripts\DoubleRunner\Stage.cs" />
+     <Compile Include="Assets\Scripts\DoubleRunner\WomanScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Input\MicHandler.cs" />
      <Compile Include="Assets\Scripts\Input\PlanetDummy.cs" />

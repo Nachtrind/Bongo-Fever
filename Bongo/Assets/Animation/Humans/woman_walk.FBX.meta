@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 96cca8634e86f914b8033310517ec80b
-timeCreated: 1436431768
+guid: 1eb257e12ebe80647894dbd26d4d25f8
+timeCreated: 1436431767
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -31,8 +31,8 @@ ModelImporter:
     100046: Dummy012
     100048: head
     100050: headhelper
-    100052: hip
-    100054: hiphelper
+    100052: hiphelper
+    100054: hipw
     100056: IK Chain001
     100058: IK Chain002
     100060: IK Chain003
@@ -86,8 +86,8 @@ ModelImporter:
     400046: Dummy012
     400048: head
     400050: headhelper
-    400052: hip
-    400054: hiphelper
+    400052: hiphelper
+    400054: hipw
     400056: IK Chain001
     400058: IK Chain002
     400060: IK Chain003
@@ -128,7 +128,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -170,7 +170,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Box001
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
