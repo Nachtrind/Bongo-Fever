@@ -98,7 +98,6 @@ public class WomanScript : MonoBehaviour
 
 	public void Activate ()
 	{
-		Debug.Log ("ACTIVATED WOMEN!");
 		this.active = true;
 		currentDance = 0;
 		anim.SetInteger ("State", currentDance);

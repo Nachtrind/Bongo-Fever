@@ -11,6 +11,9 @@ public class InputManager : MonoBehaviour
 	public float minVolume = 1.0f; //threshhold to ignore 'natural noise'
 	public float jumpVolume;
 
+	//Audio Output
+	public BongoSounds bongos;
+
 	//Status
 	bool reachedEnd;
 	
@@ -174,7 +177,15 @@ public class InputManager : MonoBehaviour
 	
 	public void SetGroupGrounded (bool _grounded)
 	{
+		if (!this.groupGrounded && _grounded) {
+			bongos.Landing ();
+		}
+		if (this.groupGrounded && !_grounded) {
+			bongos.Jump ();
+		}
+
 		this.groupGrounded = _grounded;
+
 	}
 
 	public void RemoveRunner (Runner _runner)
@@ -184,6 +195,8 @@ public class InputManager : MonoBehaviour
 		} else {
 			this.righties.Remove (_runner);
 		}
+
+		bongos.Death ();
 
 		if (lefties.Count <= 0 && righties.Count <= 0) {
 			GameManager.instance.SetGameState (GameState.GameOver);
