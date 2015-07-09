@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 77934c81894af194f93af400259f067d
+timeCreated: 1436431768
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone002
+    100002: Bone002(mirrored)
+    100004: Bone003
+    100006: Bone003(mirrored)
+    100008: Bone004
+    100010: Bone004(mirrored)
+    100012: Bone006
+    100014: Bone006(mirrored)
+    100016: Bone007
+    100018: Bone007(mirrored)
+    100020: Bone008
+    100022: Bone008(mirrored)
+    100024: Bone009
+    100026: Bone009(mirrored)
+    100028: Bone017
+    100030: Bone017(mirrored)
+    100032: Bone018
+    100034: Bone018(mirrored)
+    100036: Bone024
+    100038: Bone025
+    100040: Box003
+    100042: chest
+    100044: Dummy011
+    100046: Dummy012
+    100048: head
+    100050: headhelper
+    100052: hipe
+    100054: hiphelper
+    100056: IK Chain001
+    100058: IK Chain002
+    100060: IK Chain003
+    100062: IK Chain004
+    100064: IK Chain006
+    100066: IK Chain007
+    100068: IK Chain008
+    100070: IK Chain009
+    100072: Left_Ellbow
+    100074: Left_knee
+    100076: Left_WristHand
+    100078: leftarm
+    100080: LeftFingers
+    100082: leftfoot
+    100084: leftleg
+    100086: //RootNode
+    100088: neck
+    100090: neckhelper
+    100092: right arm
+    100094: right_Ellbow
+    100096: Right_Knee
+    100098: Right_Wristhand
+    100100: RightFingers
+    100102: rightfoot
+    100104: rightleg
+    100106: spinehelper
+    100108: stomach
+    400000: Bone002
+    400002: Bone002(mirrored)
+    400004: Bone003
+    400006: Bone003(mirrored)
+    400008: Bone004
+    400010: Bone004(mirrored)
+    400012: Bone006
+    400014: Bone006(mirrored)
+    400016: Bone007
+    400018: Bone007(mirrored)
+    400020: Bone008
+    400022: Bone008(mirrored)
+    400024: Bone009
+    400026: Bone009(mirrored)
+    400028: Bone017
+    400030: Bone017(mirrored)
+    400032: Bone018
+    400034: Bone018(mirrored)
+    400036: Bone024
+    400038: Bone025
+    400040: Box003
+    400042: chest
+    400044: Dummy011
+    400046: Dummy012
+    400048: head
+    400050: headhelper
+    400052: hipe
+    400054: hiphelper
+    400056: IK Chain001
+    400058: IK Chain002
+    400060: IK Chain003
+    400062: IK Chain004
+    400064: IK Chain006
+    400066: IK Chain007
+    400068: IK Chain008
+    400070: IK Chain009
+    400072: Left_Ellbow
+    400074: Left_knee
+    400076: Left_WristHand
+    400078: leftarm
+    400080: LeftFingers
+    400082: leftfoot
+    400084: leftleg
+    400086: //RootNode
+    400088: neck
+    400090: neckhelper
+    400092: right arm
+    400094: right_Ellbow
+    400096: Right_Knee
+    400098: Right_Wristhand
+    400100: RightFingers
+    400102: rightfoot
+    400104: rightleg
+    400106: spinehelper
+    400108: stomach
+    4300000: Box003
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
