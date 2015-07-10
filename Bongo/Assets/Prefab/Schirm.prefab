@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mats:
+  carMats:
   - {fileID: 2100000, guid: 1c498c9ba128d49429ee98bbc860f7fb, type: 2}
   - {fileID: 2100000, guid: 9d04035f9365fdd42aa7898367a6ff8e, type: 2}
 --- !u!1001 &100100000

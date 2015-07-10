@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mats:
+  carMats:
   - {fileID: 2100000, guid: cc4501b630e69a44b87911d02bcbc87b, type: 2}
   - {fileID: 2100000, guid: 74a333ee22067084bb037e7283a1927b, type: 2}
   - {fileID: 2100000, guid: 13786bf0817bc534d82d7ec606b31989, type: 2}

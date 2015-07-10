@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 422578}
   - 33: {fileID: 3300508}
   - 23: {fileID: 2321480}
-  - 95: {fileID: 9553670}
   - 65: {fileID: 6535016}
   m_Layer: 9
   m_Name: Obstkiste
@@ -258,23 +257,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .194893122, y: .23172763, z: .119999997}
   m_Center: {x: 1.03759074, y: -.599290073, z: .0599999987}
---- !u!95 &9553670
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103376}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 768c7529dc1e2834487faada0ee31535, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9591264
 Animator:
   serializedVersion: 3

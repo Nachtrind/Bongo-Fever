@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 467302}
   - 33: {fileID: 3342812}
   - 23: {fileID: 2353594}
-  - 95: {fileID: 9527948}
   - 65: {fileID: 6576604}
   m_Layer: 9
   m_Name: Schubwagen
@@ -41,7 +40,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc921f3f007090348b8112b064afc676, type: 2}
+  - {fileID: 2100000, guid: dba8f594a8929cf4f8b61844b7177113, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -74,23 +73,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .377681732, y: .542707145, z: .536971807}
   m_Center: {x: -.0135661289, y: -.0811613277, z: .201556683}
---- !u!95 &9527948
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151072}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 80e3c98198848df4a9bdb071e6c8cc84, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

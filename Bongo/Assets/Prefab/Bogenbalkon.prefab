@@ -29,6 +29,7 @@ GameObject:
   - 4: {fileID: 477620}
   - 33: {fileID: 3335498}
   - 23: {fileID: 2311136}
+  - 114: {fileID: 11427536}
   m_Layer: 9
   m_Name: Bogenbalkon
   m_TagString: Obstacle
@@ -54,8 +55,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199082}
-  m_LocalRotation: {x: -.5, y: .500000119, z: .5, w: .499999881}
-  m_LocalPosition: {x: -13.5600004, y: 8.30000019, z: 700.530029}
+  m_LocalRotation: {x: -5.30538443e-07, y: -.707106829, z: -.707106829, w: 6.2584877e-07}
+  m_LocalPosition: {x: -15.3199997, y: 8.30000019, z: 164.669998}
   m_LocalScale: {x: 3.64738131, y: 3.64738798, z: 3.64738798}
   m_Children:
   - {fileID: 440718}
@@ -152,6 +153,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11427536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8db67c9801833b4cba963e0cbb967f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: a9ae2dd4b86dd23458a96970d90269a5, type: 2}
+  - {fileID: 2100000, guid: 2f2d77f83110ee843a8c252711608051, type: 2}
+  - {fileID: 2100000, guid: b668efc6ea556354a8345e0dba18d707, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

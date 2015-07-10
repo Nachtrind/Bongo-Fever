@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 414038}
   - 33: {fileID: 3352272}
   - 23: {fileID: 2360776}
-  - 95: {fileID: 9514660}
   - 65: {fileID: 6552662}
   m_Layer: 0
   m_Name: Karren_neu
@@ -74,23 +73,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .215053603, y: .388477385, z: .177822739}
   m_Center: {x: -.00716101704, y: -.146221191, z: .041454982}
---- !u!95 &9514660
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191426}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 78327c2a68a66e24bbfc110e1f482933, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

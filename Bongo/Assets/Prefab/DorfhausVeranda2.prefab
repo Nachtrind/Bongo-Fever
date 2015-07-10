@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 405022}
   - 33: {fileID: 3338340}
   - 23: {fileID: 2300816}
-  - 95: {fileID: 9570170}
   - 65: {fileID: 6587810}
   m_Layer: 9
   m_Name: DorfhausVeranda2
@@ -135,23 +134,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25.3208027, y: 14.6102171, z: 7.32000017}
   m_Center: {x: 37.4182739, y: -.292467594, z: -6.68563938}
---- !u!95 &9570170
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115566}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0843a112ea790864e966cf83f786df71, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

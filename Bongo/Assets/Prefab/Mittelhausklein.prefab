@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 488242}
   - 33: {fileID: 3315648}
   - 23: {fileID: 2366424}
-  - 95: {fileID: 9550766}
   - 65: {fileID: 6524124}
   - 114: {fileID: 11490486}
   m_Layer: 9
@@ -75,23 +74,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.84156132, y: 1.03015924, z: 1.32356536}
   m_Center: {x: 1.28283644, y: .66791445, z: .661782682}
---- !u!95 &9550766
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164220}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aff12d4d992877f469cafdf187b89bf4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11490486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mats:
+  carMats:
   - {fileID: 2100000, guid: cc4501b630e69a44b87911d02bcbc87b, type: 2}
   - {fileID: 2100000, guid: 74a333ee22067084bb037e7283a1927b, type: 2}
   - {fileID: 2100000, guid: 13786bf0817bc534d82d7ec606b31989, type: 2}
