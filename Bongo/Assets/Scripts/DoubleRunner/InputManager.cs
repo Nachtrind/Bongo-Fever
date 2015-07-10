@@ -71,7 +71,7 @@ public class InputManager : MonoBehaviour
 		micIn = (MicHandler)audioInputObject.GetComponent ("MicHandler");
 		laneRenderer = GameObject.Find ("Lane").GetComponent<Renderer> ();
 		this.laneCenter = laneRenderer.bounds.center;
-		laneExtends = laneRenderer.bounds.extents.x * 0.9f;
+		laneExtends = laneRenderer.bounds.extents.x * 0.8f;
 		leftMaxX = laneCenter.x - laneExtends;
 		rightMaxX = laneCenter.x + laneExtends;
 		acceptInput = true;
@@ -150,7 +150,7 @@ public class InputManager : MonoBehaviour
 			
 			//Bange the drum to reload
 			if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
-				Application.LoadLevel ("DoubleRunner");
+				Application.LoadLevel ("TutorialTest");
 			}
 			
 		}

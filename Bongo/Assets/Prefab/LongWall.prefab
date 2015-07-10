@@ -26,6 +26,7 @@ GameObject:
   - 4: {fileID: 407952}
   - 33: {fileID: 3324160}
   - 23: {fileID: 2375002}
+  - 114: {fileID: 11455190}
   m_Layer: 9
   m_Name: wall 1
   m_TagString: Obstacle
@@ -43,6 +44,7 @@ GameObject:
   - 4: {fileID: 466194}
   - 33: {fileID: 3370490}
   - 23: {fileID: 2360752}
+  - 114: {fileID: 11440402}
   m_Layer: 9
   m_Name: wall
   m_TagString: Obstacle
@@ -57,8 +59,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146038}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.10775185, y: 3.10775208, z: 3.10775208}
+  m_LocalPosition: {x: 0, y: .0500000007, z: -0}
+  m_LocalScale: {x: 7.66606665, y: 7.66606808, z: 7.66606808}
   m_Children: []
   m_Father: {fileID: 472354}
   m_RootOrder: 0
@@ -69,8 +71,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188904}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 1.57099998, y: 0, z: 0}
-  m_LocalScale: {x: 3.10775185, y: 3.10775208, z: 3.10775208}
+  m_LocalPosition: {x: 1.57000005, y: -.0199999996, z: 0}
+  m_LocalScale: {x: 7.97092247, y: 7.9709177, z: 7.9709177}
   m_Children: []
   m_Father: {fileID: 472354}
   m_RootOrder: 1
@@ -81,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.81999993, y: 8.39999962, z: 438.690002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407952}
@@ -98,7 +100,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc921f3f007090348b8112b064afc676, type: 2}
+  - {fileID: 2100000, guid: 2eb1cb30bef73f34e99e9edf3c230fe1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -122,7 +124,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc921f3f007090348b8112b064afc676, type: 2}
+  - {fileID: 2100000, guid: 2eb1cb30bef73f34e99e9edf3c230fe1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -142,14 +144,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146038}
-  m_Mesh: {fileID: 4300000, guid: 06c047a7ed14c9846b1cbf3ed52fbf73, type: 3}
+  m_Mesh: {fileID: 4300000, guid: bfc2c6f33fe2d1d48a3a941ce33d8976, type: 3}
 --- !u!33 &3370490
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188904}
-  m_Mesh: {fileID: 4300000, guid: 06c047a7ed14c9846b1cbf3ed52fbf73, type: 3}
+  m_Mesh: {fileID: 4300000, guid: bfc2c6f33fe2d1d48a3a941ce33d8976, type: 3}
 --- !u!65 &6580414
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -162,6 +164,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.19000006, y: 2.82999992, z: .75}
   m_Center: {x: .810000002, y: 1.5, z: 0}
+--- !u!114 &11440402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMats:
+  - {fileID: 2100000, guid: 2eb1cb30bef73f34e99e9edf3c230fe1, type: 2}
+  - {fileID: 2100000, guid: 6cc5bbe3661bb4b4e85fc54e556d9493, type: 2}
+--- !u!114 &11455190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMats:
+  - {fileID: 2100000, guid: 2eb1cb30bef73f34e99e9edf3c230fe1, type: 2}
+  - {fileID: 2100000, guid: 6cc5bbe3661bb4b4e85fc54e556d9493, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
