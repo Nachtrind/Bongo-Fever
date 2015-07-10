@@ -86,9 +86,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carMats:
+  - {fileID: 2100000, guid: 4e387b6f84abd834fb381255a1dd2610, type: 2}
   - {fileID: 2100000, guid: cdcbead9f8976c344bc7cd7000eb5c55, type: 2}
   - {fileID: 2100000, guid: 5a899ae625bb1544da81670c3b36b01f, type: 2}
-  - {fileID: 2100000, guid: 4e387b6f84abd834fb381255a1dd2610, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

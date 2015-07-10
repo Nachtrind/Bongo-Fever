@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 		//Game Running
 		if (gameState == GameState.GameRunning) {
 			audioS.Play ();
-			GameObject text = GameObject.Find ("LevelStart");
-			text.SetActive (false);
+			//GameObject text = GameObject.Find ("LevelStart");
+			//text.SetActive (false);
 		}
 
 		//Game Over

@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3353224}
   - 23: {fileID: 2384836}
   - 65: {fileID: 6574316}
+  - 114: {fileID: 11490004}
   m_Layer: 9
   m_Name: Mittelhausgross
   m_TagString: Obstacle
@@ -24,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189932}
-  m_LocalRotation: {x: -.500000119, y: -.49999994, z: -.499999881, w: .500000119}
-  m_LocalPosition: {x: 8.60999966, y: -.0199999996, z: 1077.31006}
-  m_LocalScale: {x: 3.88926649, y: 3.88926578, z: 3.88926578}
+  m_LocalRotation: {x: .500000298, y: -.499999881, z: -.499999821, w: -.500000119}
+  m_LocalPosition: {x: -12.0299997, y: 8.36999989, z: 141.369995}
+  m_LocalScale: {x: 9.74625683, y: 9.74625111, z: 9.74625111}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 088580b3daab29e4eb0191b3b4fabb94, type: 2}
+  - {fileID: 2100000, guid: cc4501b630e69a44b87911d02bcbc87b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -60,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189932}
-  m_Mesh: {fileID: 4300004, guid: b714229f0f77cd641998ed781c548a16, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 26c5e8e81958b0e4cb9b845bfefa9955, type: 3}
 --- !u!65 &6574316
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -71,8 +72,23 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.84494841, y: .970000029, z: 1.94929159}
-  m_Center: {x: -.862472236, y: .521792173, z: .974645793}
+  m_Size: {x: .75, y: .479999989, z: -.779999971}
+  m_Center: {x: -.340000004, y: .280000001, z: .360000014}
+--- !u!114 &11490004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: cc4501b630e69a44b87911d02bcbc87b, type: 2}
+  - {fileID: 2100000, guid: 74a333ee22067084bb037e7283a1927b, type: 2}
+  - {fileID: 2100000, guid: 13786bf0817bc534d82d7ec606b31989, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

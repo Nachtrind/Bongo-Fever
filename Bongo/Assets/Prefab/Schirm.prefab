@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2397812}
   - 95: {fileID: 9588164}
   - 65: {fileID: 6555536}
+  - 114: {fileID: 11476520}
   m_Layer: 9
   m_Name: Schirm
   m_TagString: Obstacle
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131500}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: -1.5103668, y: .0326498263, z: -39.688652}
+  m_LocalPosition: {x: .103732109, y: 8.33023834, z: -545.993896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc921f3f007090348b8112b064afc676, type: 2}
+  - {fileID: 2100000, guid: 1c498c9ba128d49429ee98bbc860f7fb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -91,6 +92,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11476520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 1c498c9ba128d49429ee98bbc860f7fb, type: 2}
+  - {fileID: 2100000, guid: 9d04035f9365fdd42aa7898367a6ff8e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -213,7 +213,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 95b49540a00260241817638fd2725039, type: 3}
+  m_Motion: {fileID: 7400000, guid: 697858728fe4f774fa0c3d5d1be0dc26, type: 3}
   m_Tag: 
 --- !u!1102 &110218288
 AnimatorState:

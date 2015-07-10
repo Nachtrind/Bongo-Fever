@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3372078}
   - 23: {fileID: 2344518}
   - 65: {fileID: 6550754}
+  - 114: {fileID: 11479240}
   m_Layer: 9
   m_Name: tonne
   m_TagString: Obstacle
@@ -25,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169178}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -3.31999993, y: 8.35000038, z: 157.759995}
-  m_LocalScale: {x: .904852688, y: .904853404, z: 1.19048953}
+  m_LocalPosition: {x: -8.36100006, y: 8.35200024, z: -155.987}
+  m_LocalScale: {x: .904852688, y: .705260932, z: .927891791}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bc921f3f007090348b8112b064afc676, type: 2}
+  - {fileID: 2100000, guid: 9d04035f9365fdd42aa7898367a6ff8e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -73,6 +74,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .524812579, y: .516839623, z: .544045389}
   m_Center: {x: -1.49011612e-08, y: 1.49011647e-08, z: .272022694}
+--- !u!114 &11479240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc42e62a1bb1c4791042570ea402d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carMats:
+  - {fileID: 2100000, guid: 1c498c9ba128d49429ee98bbc860f7fb, type: 2}
+  - {fileID: 2100000, guid: 9d04035f9365fdd42aa7898367a6ff8e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
