@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
 	
 	//Timer
 	float timer;
-	float inputTime = 0.08f;
+	float inputTime = 0.05f;
 	bool acceptInput;
 	float nonBangTime = 0.2f;
 	
@@ -150,7 +150,7 @@ public class InputManager : MonoBehaviour
 			
 			//Bange the drum to reload
 			if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
-				Application.LoadLevel ("TutorialTest");
+				Application.LoadLevel ("Tutorial");
 			}
 			
 		}

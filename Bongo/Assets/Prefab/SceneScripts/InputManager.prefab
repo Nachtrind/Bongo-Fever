@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68086922, y: 20.6852436, z: 55.4255409}
+  m_LocalPosition: {x: -2.43841815, y: .0326498263, z: 176.933105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,16 +40,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioInputObject: {fileID: 0}
-  minVolume: 2
-  jumpVolume: 18
+  minVolume: 4
+  jumpVolume: 33
+  bongos: {fileID: 0}
   laneRenderer: {fileID: 0}
-  subDistance: 2
-  addDistance: .300000012
+  subDistance: 2.29999995
+  addDistance: .400000006
   lefties:
   - {fileID: 0}
-  righties: []
+  - {fileID: 0}
+  - {fileID: 0}
+  righties:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   camDummy: {fileID: 0}
-  jumpForce: 12
+  jumpForce: 10
+  doubleJumpForce: 8
   stage: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
