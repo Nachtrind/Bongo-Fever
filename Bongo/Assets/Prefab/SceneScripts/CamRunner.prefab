@@ -33,6 +33,8 @@ GameObject:
   - 114: {fileID: 11483732}
   - 114: {fileID: 11466942}
   - 82: {fileID: 8291436}
+  - 82: {fileID: 8273010}
+  - 114: {fileID: 11454516}
   m_Layer: 0
   m_Name: CamRunner
   m_TagString: Untagged
@@ -76,8 +78,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172262}
-  m_LocalRotation: {x: .15818423, y: 0, z: 0, w: .987409651}
-  m_LocalPosition: {x: .121669412, y: .0326498263, z: 178.237961}
+  m_LocalRotation: {x: .158184215, y: 7.24318379e-05, z: -.000452131091, w: .987409592}
+  m_LocalPosition: {x: 0, y: .529999971, z: 175.839996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474824}
@@ -90,8 +92,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126658}
-  m_LocalRotation: {x: .146867871, y: -.00524510536, z: -.013037744, w: .989056349}
-  m_LocalPosition: {x: 0, y: 2.1500001, z: -3.07999992}
+  m_LocalRotation: {x: .211413234, y: -.00734082097, z: .00262164744, w: .977365732}
+  m_LocalPosition: {x: -.00999999978, y: 3.63000011, z: -3.28999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462880}
@@ -114,7 +116,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 70
+  field of view: 72
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -193,7 +195,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126658}
   m_Enabled: 1
---- !u!82 &8291436
+--- !u!82 &8273010
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -262,6 +264,75 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8291436
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172262}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d2523c7b74efe06479ccd7e05121b065, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8292044
 AudioSource:
   m_ObjectHideFlags: 1
@@ -271,9 +342,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 206ed7a1bc5ef8248b1f61592d1fcf85, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 3b6901dde4f23d64c959f0d1d1eb73f0, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .504000008
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -353,6 +424,20 @@ MonoBehaviour:
   speed: 9
   stageSpeed: 2
   xSpeed: 4
+--- !u!114 &11454516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c6f2aee246a464484565e2f0592530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 1448e7ea64c1cb44187d8e237643a53d, type: 3}
+  landing: {fileID: 8300000, guid: fea9739838b77684f96baaa9293c4cbb, type: 3}
+  death: {fileID: 8300000, guid: fd0de3d74a004b6418d12de2c2da9acb, type: 3}
 --- !u!114 &11466942
 MonoBehaviour:
   m_ObjectHideFlags: 1
