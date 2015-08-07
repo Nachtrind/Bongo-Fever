@@ -627,6 +627,8 @@ GameObject:
   - 4: {fileID: 496566}
   - 114: {fileID: 11498748}
   - 65: {fileID: 6539144}
+  - 65: {fileID: 6547184}
+  - 54: {fileID: 5437536}
   m_Layer: 9
   m_Name: Woman1
   m_TagString: Obstacle
@@ -1527,9 +1529,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177866}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: -3.13400006, y: .0350000001, z: 1946.90002}
-  m_LocalScale: {x: .200176507, y: .200176507, z: .200176507}
+  m_LocalRotation: {x: .0178684816, y: .706864476, z: .019134732, w: .706864417}
+  m_LocalPosition: {x: -19.4599991, y: -2, z: .460000008}
+  m_LocalScale: {x: .577844083, y: .577844083, z: .577844083}
   m_Children:
   - {fileID: 456356}
   m_Father: {fileID: 0}
@@ -1571,6 +1573,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 463914}
   m_RootOrder: 0
+--- !u!54 &5437536
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177866}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6539144
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1583,6 +1600,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.63999999, z: .400000006}
   m_Center: {x: 0, y: .850000024, z: .209999993}
+--- !u!65 &6547184
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.37}
+  m_Center: {x: 0, y: .99000001, z: .140000001}
 --- !u!95 &9574040
 Animator:
   serializedVersion: 3
@@ -1591,7 +1620,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147618}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 96cca8634e86f914b8033310517ec80b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 95df1775aac46724dad748ba83db7015, type: 3}
   m_Controller: {fileID: 9100000, guid: eefb030ab30493b4d8e6db3aab1f562c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -1620,7 +1649,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9302374eb4f126b4f9c06de91653e2b5, type: 2}
   - {fileID: 2100000, guid: 59aa7773714f3724ca2fde4d19ae2c1f, type: 2}
   - {fileID: 2100000, guid: 0bd2f6ab6dfdca444bb4926df70b07e5, type: 2}
-  women: 0
+  women: 1
+  targetStage: {fileID: 0}
 --- !u!137 &13781414
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

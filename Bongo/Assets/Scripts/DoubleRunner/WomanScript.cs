@@ -13,11 +13,12 @@ public class WomanScript : MonoBehaviour
 	private float timer;
 	float hitDistance;
 	public bool women;
+	public GameObject targetStage;
 
 	// Use this for initialization
 	void Start ()
 	{
-		hitDistance = 1.00f;
+		hitDistance = 2.00f;
 		currentDance = 1;
 		anim = this.GetComponentInChildren<Animator> ();
 		anim.SetInteger ("State", currentDance);
@@ -65,11 +66,9 @@ public class WomanScript : MonoBehaviour
 		if (active && !reachedTarget) {
 			bool hitSomething = false;
 			Vector3 dir = targetPoint.position - this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f);
-			Ray ray = new Ray (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir.normalized);
-			RaycastHit[] hits = Physics.RaycastAll (ray, 2.0f);
-			Debug.DrawRay (this.transform.position + new Vector3 (0.0f, 1.0f, 0.0f), dir.normalized * 2.0f, Color.blue, 4.0f);
 
-			if (hits.Length > 0) {
+			/*if (hits.Length > 0) {
+				Debug.Log ("HIT SOMETHING!!!");
 				foreach (RaycastHit hit in hits) {
 					if (hit.collider != this.GetComponent<Collider> () && hit.distance < hitDistance) {
 						Debug.Log ("Something is blocking my way, I stop and dance now");
@@ -85,15 +84,22 @@ public class WomanScript : MonoBehaviour
 						break;
 					}
 				}
-			}
+			}*/
 
-			if (!hitSomething) {
-				this.transform.position = new Vector3 (this.transform.position.x + dir.normalized.x * speed * Time.deltaTime, 
+
+			this.transform.position = new Vector3 (this.transform.position.x + dir.normalized.x * speed * Time.deltaTime, 
 				                                       this.transform.position.y,
 				                                       this.transform.position.z + dir.normalized.z * speed * Time.deltaTime);
-			}
 
 		}
+
+		if (reachedTarget) {
+			Vector3 targetDir = targetStage.transform.position - transform.position;
+			float step = speed * Time.deltaTime;
+			Vector3 newDir = Vector3.RotateTowards (transform.forward, targetDir, step, 0.0F);
+			transform.rotation = Quaternion.LookRotation (newDir);
+		}
+
 	}
 
 	public void Activate ()
@@ -102,5 +108,15 @@ public class WomanScript : MonoBehaviour
 		currentDance = 0;
 		anim.SetInteger ("State", currentDance);
 	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		Debug.Log ("TRIGGER!");
+		if (other.gameObject.tag.Equals ("Obstacle") && other != this.GetComponent<BoxCollider> ()) {
+			anim.SetInteger ("State", currentDance);
+			reachedTarget = true;
+		}
+	}
+
 
 }

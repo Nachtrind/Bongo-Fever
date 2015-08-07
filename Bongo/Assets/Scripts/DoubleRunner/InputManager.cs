@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
 	
 	//Timer
 	float timer;
-	float inputTime = 0.05f;
+	float inputTime = 0.03f;
 	bool acceptInput;
 	float nonBangTime = 0.2f;
 	
@@ -98,7 +98,7 @@ public class InputManager : MonoBehaviour
 				}
 
 				//Jump
-				if (l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) {
+				if ((l > minVolume && l > jumpVolume || Input.GetKeyDown (KeyCode.M)) && acceptInput) {
 					//Jump Handling
 					foreach (Runner runner in lefties) {
 						runner.Jump ();
@@ -106,6 +106,8 @@ public class InputManager : MonoBehaviour
 					foreach (Runner runner in righties) {
 						runner.Jump ();
 					}
+
+					acceptInput = false;
 				}
 
 				//Left-Right
